@@ -1,6 +1,6 @@
 ---
 title: My Favorite Doggos
-featuredImage: pupperino.png
+featuredImage: "pupperino.png"
 ---
 
 Content goes here!
