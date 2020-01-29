@@ -7,8 +7,8 @@ export default () => {
     query {
       file(relativePath: { eq: "images/default.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fixed(width: 400, height: 400) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -18,7 +18,7 @@ export default () => {
     <div>
       <h1>Hello gatsby-image</h1>
       <Img
-        fluid={data.file.childImageSharp.fluid}
+        fixed={data.file.childImageSharp.fixed}
         alt="Gatsby Docs are awesome"
       />
     </div>
