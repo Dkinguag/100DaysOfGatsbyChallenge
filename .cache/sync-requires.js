@@ -5,9 +5,9 @@ const preferDefault = m => m && m.default || m
 
 
 exports.components = {
+  "component---node-modules-gatsby-plugin-offline-app-shell-js": hot(preferDefault(require("/Users/asc/Desktop/100DaysOfGatsby/tutorial-part-four/node_modules/gatsby-plugin-offline/app-shell.js"))),
   "component---src-templates-blog-post-js": hot(preferDefault(require("/Users/asc/Desktop/100DaysOfGatsby/tutorial-part-four/src/templates/blog-post.js"))),
   "component---src-pages-about-js": hot(preferDefault(require("/Users/asc/Desktop/100DaysOfGatsby/tutorial-part-four/src/pages/about.js"))),
-  "component---cache-dev-404-page-js": hot(preferDefault(require("/Users/asc/Desktop/100DaysOfGatsby/tutorial-part-four/.cache/dev-404-page.js"))),
   "component---src-pages-index-js": hot(preferDefault(require("/Users/asc/Desktop/100DaysOfGatsby/tutorial-part-four/src/pages/index.js"))),
   "component---src-pages-my-files-js": hot(preferDefault(require("/Users/asc/Desktop/100DaysOfGatsby/tutorial-part-four/src/pages/my-files.js")))
 }
