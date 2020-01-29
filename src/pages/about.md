@@ -1,6 +1,6 @@
 ---
 title: About
-featuredImage: "../images/team-cat.png"
+featuredImage: "pupperino.png"
 ---
 
 Content goes here!
