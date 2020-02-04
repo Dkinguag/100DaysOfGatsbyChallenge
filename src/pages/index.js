@@ -15,7 +15,7 @@ const ContactFormPage = () => (
         > 
         
         <input type="hidden" name="bot-field" />
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="contact" value="contact" />
         <input name = "name" placeholder = "Your Name" type = "text"/>
         <button>Send</button> 
         </form>    
