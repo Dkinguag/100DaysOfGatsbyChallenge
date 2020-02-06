@@ -1,4 +1,7 @@
 module.exports = [{
+      plugin: require('../node_modules/gatsby-remark-images/gatsby-browser.js'),
+      options: {"plugins":[],"maxWidth":800},
+    },{
       plugin: require('../node_modules/gatsby-plugin-manifest/gatsby-browser.js'),
       options: {"plugins":[],"name":"GatsbyJS","short_name":"GatsbyJS","start_url":"/","background_color":"#6b37bf","theme_color":"#6b37bf","display":"standalone","icon":"src/images/icon.png"},
     },{
