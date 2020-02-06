@@ -1,28 +1,71 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from "react"
+import { css } from "@emotion/core"
+import { Link, graphql } from "gatsby"
+import { rhythm } from "../utils/typography"
+import Layout from "../components/layout"
 
-const ContactFormPage = () => (
+export default ({ data }) => {
+  return (
+    <Layout>
+      <div>
+        <h1
+          css={css`
+            display: inline-block;
+            border-bottom: 1px solid;
+          `}
+        >
+          Challenge Checklist:
+        </h1>
+        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <div key={node.id}>
+            <Link
+              to={node.fields.slug}
+              css={css`
+                text-decoration: none;
+                color: inherit;
+              `}
+            >
+              <h3
+                css={css`
+                  margin-bottom: ${rhythm(1 / 4)};
+                `}
+              >
+                {node.frontmatter.title}{" "}
+                <span
+                  css={css`
+                    color: #fff;
+                  `}
+                >
+                  — {node.frontmatter.date}
+                </span>
+              </h3>
+              <p>{node.excerpt}</p>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </Layout>
+  )
+}
 
-    <div>
-        <h1>Hi People!</h1>
-        <p>Welcome to my new Gatsby site.</p>
-        <p>Now go build something great.</p>
-        <form 
-        name = "contact" 
-        method = "post"
-        data-netlify = "true"
-        data-netlify-honeypot = "bot-field"
-        > 
-        
-        <input type="hidden" name="bot-field" />
-        <input type="hidden" name="contact" value="contact" />
-        <input name = "name" placeholder = "Your Name" type = "text"/>
-        <button>Send</button> 
-        </form>    
-        <Link to = "/HomePage/">Home Page</Link>
-    </div>
-
-) 
-
-export default ContactFormPage
- 
+export const query = graphql`
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+          }
+          fields {
+            slug
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`

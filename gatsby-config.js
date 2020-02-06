@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: `Pandas Eating Lots`,
+    title: `#100DaysOfGatsby`,
     description: `A simple description about pandas eating lots...`,
     author: `gatsbyjs`,
   },

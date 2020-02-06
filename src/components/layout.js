@@ -41,7 +41,7 @@ export default ({ children }) => {
         float: right;
       `}
     >
-      About
+      About Me 
     </Link>
     {children}
   </div>
