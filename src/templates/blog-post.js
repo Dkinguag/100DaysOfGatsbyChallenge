@@ -20,7 +20,7 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
-  query PostQuery($slug: String!) {
+  query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
@@ -33,6 +33,7 @@ export const query = graphql`
           }
         }
       }
+      excerpt
     }
   }
 `
